@@ -914,10 +914,16 @@ a.info-value:hover {
         padding: 0 1.5rem;
     }
     
+    .hero {
+        min-height: auto;
+        padding-top: 120px;
+        padding-bottom: 60px;
+    }
+
     .hero-content-centered {
         flex-direction: column;
         text-align: center;
-        gap: 1.5rem; /* Reduced gap for mobile */
+        gap: 1.5rem;
     }
     
     .hero-btns {
@@ -927,14 +933,20 @@ a.info-value:hover {
     .name {
         font-size: 2.5rem;
         white-space: normal;
+        line-height: 1.2;
     }
     
+    .hero-image,
     .image-wrapper {
-        width: 180px; /* Increased from 150px */
-        height: 180px;
+        width: 200px;
+        height: 200px;
     }
     
     .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-grid-flex {
         grid-template-columns: 1fr;
     }
 }
@@ -942,10 +954,6 @@ a.info-value:hover {
 @media (max-width: 768px) {
     .container {
         padding: 0 1rem;
-    }
-    
-    .about-grid-flex {
-        grid-template-columns: 1fr;
     }
     
     .nav-container {
@@ -958,6 +966,35 @@ a.info-value:hover {
     
     .mobile-menu-btn {
         display: block;
+    }
+
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    
+    .hero-image,
+    .image-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .name {
+        font-size: 2rem;
+    }
+    
+    .role {
+        font-size: 1.2rem;
+    }
+    
+    .bio {
+        font-size: 0.95rem;
+        padding: 0 0.5rem;
+    }
+
+    .tech-pills {
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     section {
