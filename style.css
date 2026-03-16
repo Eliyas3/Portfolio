@@ -978,10 +978,7 @@ a.info-value:hover {
         width: 160px;
         height: 160px;
     }
-    
-    .name {
-        font-size: 2rem;
-    }
+
     
     .role {
         font-size: 1.2rem;
@@ -995,6 +992,12 @@ a.info-value:hover {
     .tech-pills {
         flex-wrap: wrap;
         justify-content: center;
+        width: 100%;
+    }
+    
+    .name {
+        font-size: 2rem;
+        word-break: break-word;
     }
     
     section {
