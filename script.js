@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // 5. Form Submission Handling
-    const contactForm = document.querySelector('.contact-form');
+    const contactForm = document.querySelector('.contact-form-modern');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -62,13 +62,37 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Sending...';
             btn.disabled = true;
 
-            // Simulate API call
-            setTimeout(() => {
-                alert('Thank you for your message! I will get back to you soon.');
-                contactForm.reset();
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData.entries());
+
+            let actionUrl = contactForm.action;
+            if (actionUrl.includes('formsubmit.co') && !actionUrl.includes('/ajax/')) {
+                actionUrl = actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+            }
+
+            fetch(actionUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert('Thank you for your message! I will get back to you soon.');
+                    contactForm.reset();
+                } else {
+                    alert('There was a problem submitting your form. Did you activate the email link?');
+                }
+            })
+            .catch(error => {
+                alert('Oops! There was a network error submitting your form.');
+            })
+            .finally(() => {
                 btn.innerText = originalText;
                 btn.disabled = false;
-            }, 1500);
+            });
         });
     }
 

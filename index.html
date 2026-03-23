@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio</title>
+    <title>Eliyas Khan | Portfolio</title>
+    <link rel="icon" href="IMG_20260322_000734.png" type="image/png">
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- FontAwesome for Icons -->
@@ -424,18 +425,20 @@
             <div class="contact-grid">
                 <!-- Contact Form -->
                 <div class="contact-card animate-up">
-                    <form class="contact-form-modern">
+                    <form action="https://formsubmit.co/eliyaskhanmohammad36@gmail.com" method="POST" class="contact-form-modern">
+                        <!-- Disable Captcha (Optional) -->
+                        <input type="hidden" name="_captcha" value="false">
                         <div class="form-group-modern">
                             <label>Name</label>
-                            <input type="text" placeholder="Your name" required>
+                            <input type="text" name="name" placeholder="Your name" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Email</label>
-                            <input type="email" placeholder="your.email@example.com" required>
+                            <input type="email" name="email" placeholder="your.email@example.com" required>
                         </div>
                         <div class="form-group-modern">
                             <label>Message</label>
-                            <textarea placeholder="Your message..." rows="5" required></textarea>
+                            <textarea name="message" placeholder="Your message..." rows="5" required></textarea>
                         </div>
                         <button type="submit" class="btn-modern-submit">Send Message ↗</button>
                     </form>
